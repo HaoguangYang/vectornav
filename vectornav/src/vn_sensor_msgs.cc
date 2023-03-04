@@ -21,13 +21,18 @@
 #include "sensor_msgs/msg/nav_sat_fix.hpp"
 #include "sensor_msgs/msg/temperature.hpp"
 #include "sensor_msgs/msg/time_reference.hpp"
-#include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
 #include "vectornav_msgs/msg/attitude_group.hpp"
 #include "vectornav_msgs/msg/common_group.hpp"
 #include "vectornav_msgs/msg/gps_group.hpp"
 #include "vectornav_msgs/msg/imu_group.hpp"
 #include "vectornav_msgs/msg/ins_group.hpp"
 #include "vectornav_msgs/msg/time_group.hpp"
+
+#if __has_include("tf2_geometry_msgs/tf2_geometry_msgs.hpp")
+#include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
+#else
+#include "tf2_geometry_msgs/tf2_geometry_msgs.h"
+#endif
 
 using namespace std::chrono_literals;
 
